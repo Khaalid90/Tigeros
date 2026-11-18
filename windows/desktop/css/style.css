@@ -563,3 +563,28 @@ button {
 .window-task {
     border-bottom: 2px solid var(--blue) !important;
 }
+
+/* Official TigerOS wallpaper */
+.desktop {
+    background:
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.58)),
+        url("../../../../branding/wallpapers/tigeros.jpg")
+        center center / cover no-repeat fixed;
+}
+
+.desktop::before {
+    opacity: .08;
+}
+
+.brand-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.menu-header .large {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
