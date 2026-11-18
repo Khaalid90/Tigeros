@@ -465,3 +465,101 @@ button {
     background: #d3e3f3;
     color: #101820;
 }
+
+/* TigerOS application windows */
+.window-layer {
+    position: absolute;
+    z-index: 4;
+    inset: 65px 0 65px;
+    pointer-events: none;
+}
+
+.app-window {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(620px, calc(100% - 30px));
+    min-height: 260px;
+    max-height: calc(100% - 50px);
+    overflow: auto;
+    pointer-events: auto;
+    background: #101820;
+    border: 1px solid var(--blue);
+    border-radius: 12px;
+    box-shadow: 0 20px 70px #000b;
+}
+
+.window-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 17px;
+    background: #08111b;
+    border-bottom: 1px solid var(--border);
+    cursor: move;
+}
+
+.window-titlebar strong {
+    font-size: 13px;
+}
+
+.window-close {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: #a52d38;
+    color: white;
+}
+
+.window-content {
+    padding: 22px;
+    color: #f4f8ff;
+}
+
+.window-content h2 {
+    margin-bottom: 12px;
+    color: var(--blue);
+}
+
+.window-content p {
+    margin: 9px 0;
+    color: #b6c5d6;
+    font-size: 13px;
+}
+
+.window-content .file-item {
+    padding: 12px;
+    margin: 7px 0;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #142331;
+    font-size: 13px;
+}
+
+.window-content button {
+    padding: 10px 14px;
+    margin: 5px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #142b40;
+}
+
+.window-content button:hover {
+    border-color: var(--blue);
+}
+
+.terminal-screen {
+    padding: 16px;
+    min-height: 180px;
+    border-radius: 8px;
+    background: #020609;
+    color: #29e69b;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.window-task {
+    border-bottom: 2px solid var(--blue) !important;
+}
