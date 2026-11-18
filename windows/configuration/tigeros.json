@@ -1,0 +1,20 @@
+{
+  "name": "TigerOS",
+  "version": "1.0.0-alpha",
+  "architecture": "x64",
+  "base_os": "Windows 11",
+  "linux_environment": "Ubuntu WSL2",
+  "branding": {
+    "primary": "#050505",
+    "accent": "#008CFF",
+    "secondary": "#101820",
+    "logo": "cyber-tiger"
+  },
+  "features": {
+    "native_windows_apps": true,
+    "linux_terminal": true,
+    "ubuntu_wsl2": true,
+    "custom_desktop": true,
+    "custom_installer": true
+  }
+}
