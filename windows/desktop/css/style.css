@@ -1,0 +1,467 @@
+:root {
+    --background: #050505;
+    --panel: #101820;
+    --panel-light: #162431;
+    --blue: #008CFF;
+    --text: #f4f8ff;
+    --muted: #91a3b8;
+    --border: rgba(0,140,255,.24);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    color: inherit;
+    cursor: pointer;
+}
+
+.desktop {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 80% 35%, rgba(0,100,220,.18), transparent 45%),
+        radial-gradient(ellipse at 15% 90%, rgba(0,140,255,.10), transparent 40%),
+        linear-gradient(135deg, #050505, #08111b 65%, #050505);
+}
+
+.desktop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .14;
+    background-image:
+        linear-gradient(rgba(0,140,255,.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,140,255,.15) 1px, transparent 1px);
+    background-size: 45px 45px;
+    mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.topbar {
+    height: 65px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+    background: rgba(5,8,13,.8);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.tiger {
+    font-size: 27px;
+}
+
+.top-status {
+    display: flex;
+    gap: 22px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.top-status span:first-child {
+    color: #26d995;
+}
+
+.workspace {
+    position: relative;
+    z-index: 1;
+    padding: 55px 7%;
+}
+
+.subtitle, .system-card .card-heading, .system-details small {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.welcome h1 {
+    margin: 14px 0;
+    font-size: clamp(30px, 5vw, 55px);
+}
+
+.description {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.desktop-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 65px;
+}
+
+.desktop-icon {
+    width: 75px;
+    border: 0;
+    background: transparent;
+    display: grid;
+    justify-items: center;
+    gap: 9px;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.desktop-icon:hover {
+    background: rgba(0,140,255,.13);
+}
+
+.desktop-icon span {
+    font-size: 28px;
+}
+
+.desktop-icon small {
+    font-size: 11px;
+}
+
+.system-card {
+    max-width: 620px;
+    margin-top: 55px;
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: rgba(12,23,34,.83);
+    box-shadow: 0 15px 50px rgba(0,0,0,.25);
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.online {
+    color: #26d995;
+    letter-spacing: 1px;
+}
+
+.system-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.system-details div {
+    display: grid;
+    gap: 8px;
+}
+
+.system-details small {
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.system-details strong {
+    font-size: 13px;
+}
+
+.taskbar {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: rgba(5,8,13,.94);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+}
+
+.start-button {
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--panel);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.start-button:hover {
+    background: var(--panel-light);
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 10px;
+}
+
+.taskbar-apps button {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    font-size: 20px;
+}
+
+.taskbar-apps button:hover {
+    background: rgba(0,140,255,.18);
+}
+
+.clock-button {
+    margin-left: auto;
+    display: grid;
+    gap: 4px;
+    border: 0;
+    background: transparent;
+    text-align: right;
+}
+
+.clock-button small {
+    color: var(--muted);
+}
+
+.start-menu, .quick-panel {
+    position: absolute;
+    z-index: 10;
+    bottom: 78px;
+    background: rgba(12,22,33,.98);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 20px 70px #000b;
+    backdrop-filter: blur(20px);
+}
+
+.start-menu {
+    left: 20px;
+    width: min(390px, calc(100vw - 40px));
+    padding: 23px;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-header small {
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+.menu-header h2 {
+    margin-top: 5px;
+    font-size: 27px;
+}
+
+.large {
+    font-size: 38px;
+}
+
+.start-menu input {
+    width: 100%;
+    margin: 23px 0;
+    padding: 13px;
+    color: white;
+    background: #050b12;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.start-menu input:focus {
+    border-color: var(--blue);
+}
+
+.start-menu h3, .quick-panel h3 {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+}
+
+.app-grid button {
+    min-height: 80px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 9px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: #111e2b;
+    font-size: 23px;
+}
+
+.app-grid button:hover {
+    border-color: var(--blue);
+    background: #142b40;
+}
+
+.app-grid button span {
+    font-size: 11px;
+}
+
+.menu-footer {
+    margin-top: 22px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.quick-panel {
+    right: 20px;
+    width: 260px;
+    padding: 20px;
+}
+
+.quick-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.quick-grid button {
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #111e2b;
+    text-align: left;
+}
+
+.quick-panel p {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.toast {
+    position: absolute;
+    z-index: 20;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 13px 20px;
+    background: var(--panel-light);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .top-status {
+        gap: 10px;
+        font-size: 9px;
+    }
+
+    .workspace {
+        padding: 35px 20px;
+    }
+
+    .desktop-icons {
+        gap: 8px;
+        margin-top: 40px;
+    }
+
+    .system-card {
+        margin-top: 35px;
+        padding: 16px;
+    }
+
+    .system-details {
+        gap: 18px;
+    }
+
+    .taskbar {
+        padding: 0 10px;
+        gap: 10px;
+    }
+
+    .start-button {
+        padding: 9px;
+    }
+
+    .start-button b {
+        font-size: 11px;
+    }
+
+    .taskbar-apps {
+        gap: 2px;
+    }
+
+    .taskbar-apps button {
+        width: 33px;
+        font-size: 17px;
+    }
+}
+
+.light-mode {
+    --background: #e9f1fa;
+    --panel: #dce8f5;
+    --panel-light: #c9ddf2;
+    --text: #101820;
+    --muted: #52677d;
+}
+
+.light-mode .desktop {
+    background: linear-gradient(135deg, #e9f1fa, #cbdff5);
+}
+
+.light-mode .taskbar,
+.light-mode .topbar {
+    background: rgba(220,232,245,.95);
+}
+
+.light-mode .system-card,
+.light-mode .start-menu,
+.light-mode .quick-panel {
+    background: rgba(230,240,250,.97);
+}
+
+.light-mode .app-grid button,
+.light-mode .quick-grid button {
+    background: #d3e3f3;
+    color: #101820;
+}

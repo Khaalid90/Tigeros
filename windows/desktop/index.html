@@ -1,0 +1,122 @@
+cat > windows/desktop/index.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>TigerOS Desktop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="desktop">
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="tiger">🐯</span>
+            <span>TIGER<span class="blue">OS</span></span>
+        </div>
+        <div class="top-status">
+            <span>● SYSTEM ONLINE</span>
+            <span id="topClock">00:00</span>
+        </div>
+    </header>
+
+    <main class="workspace">
+        <div class="welcome">
+            <p class="subtitle">WELCOME TO YOUR SYSTEM</p>
+            <h1>Welcome back, <span class="blue">Tiger.</span></h1>
+            <p class="description">Your technology. Your world. Your control.</p>
+        </div>
+
+        <div class="desktop-icons">
+            <button class="desktop-icon" data-app="Computer">
+                <span>💻</span><small>This PC</small>
+            </button>
+            <button class="desktop-icon" data-app="Files">
+                <span>📁</span><small>Files</small>
+            </button>
+            <button class="desktop-icon" data-app="Terminal">
+                <span>⌨️</span><small>Terminal</small>
+            </button>
+            <button class="desktop-icon" data-app="Settings">
+                <span>⚙️</span><small>Settings</small>
+            </button>
+        </div>
+
+        <section class="system-card">
+            <div class="card-heading">
+                <span>SYSTEM OVERVIEW</span>
+                <span class="online">● ONLINE</span>
+            </div>
+            <div class="system-details">
+                <div><small>OPERATING SYSTEM</small><strong>TigerOS</strong></div>
+                <div><small>VERSION</small><strong>1.0.0 Alpha</strong></div>
+                <div><small>ARCHITECTURE</small><strong>x64</strong></div>
+                <div><small>LINUX ENVIRONMENT</small><strong>Ubuntu WSL2</strong></div>
+            </div>
+        </section>
+    </main>
+
+    <section class="start-menu hidden" id="startMenu">
+        <div class="menu-header">
+            <div>
+                <small>WELCOME TO</small>
+                <h2>Tiger<span class="blue">OS</span></h2>
+            </div>
+            <span class="tiger large">🐯</span>
+        </div>
+
+        <input id="appSearch" type="search" placeholder="Search applications...">
+
+        <h3>APPLICATIONS</h3>
+        <div class="app-grid">
+            <button data-app="Computer">💻<span>This PC</span></button>
+            <button data-app="Files">📁<span>Files</span></button>
+            <button data-app="Terminal">⌨️<span>Terminal</span></button>
+            <button data-app="Browser">🌐<span>Browser</span></button>
+            <button data-app="Settings">⚙️<span>Settings</span></button>
+            <button data-app="About TigerOS">🐯<span>About</span></button>
+        </div>
+
+        <div class="menu-footer">
+            <span>🐯 TigerOS User</span>
+            <span>Version 1.0.0 Alpha</span>
+        </div>
+    </section>
+
+    <section class="quick-panel hidden" id="quickPanel">
+        <h3>QUICK SETTINGS</h3>
+        <div class="quick-grid">
+            <button id="themeButton">🌙 Dark Mode</button>
+            <button id="accentButton">🔵 Blue Theme</button>
+        </div>
+        <p>TigerOS Control Center</p>
+    </section>
+
+    <div class="toast hidden" id="toast"></div>
+
+    <footer class="taskbar">
+        <button class="start-button" id="startButton">
+            <span>🐯</span> <b>TigerOS</b>
+        </button>
+
+        <div class="taskbar-apps">
+            <button data-app="Files" title="Files">📁</button>
+            <button data-app="Browser" title="Browser">🌐</button>
+            <button data-app="Terminal" title="Terminal">⌨️</button>
+            <button data-app="Settings" title="Settings">⚙️</button>
+        </div>
+
+        <button class="clock-button" id="clockButton">
+            <span id="clock">00:00</span>
+            <small id="date">Loading...</small>
+        </button>
+    </footer>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
